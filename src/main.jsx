@@ -188,8 +188,7 @@ function ParamRow({ param }) {
 }
 
 function Method({ method, module, pagePath, copied, copy }) {
-  const signature = `${module.namespace}.${method.name}(${method.parameters.map((param) => param.name + (param.required ? '' : '?')).join(', ')})`
-  const withExport = (example) => `${example}\n\n-- OR\n\n${example.replaceAll(`${module.namespace}.${method.name}`, `exports.${module.exportResource}:${module.exportPrefix}${method.name}`)}`
+  const withExport = (example) => example.includes('-- OR') ? example : `${example}\n\n-- OR\n\n${example.replaceAll(`${module.namespace}.${method.name}`, `exports.${module.exportResource}:${module.exportPrefix}${method.name}`)}`
   const consumedParams = new Set()
   const parameterRows = method.parameters.map((param) => {
     if (consumedParams.has(param.name)) return null
@@ -221,7 +220,6 @@ function Method({ method, module, pagePath, copied, copy }) {
       <button className="icon-button" title="Copy signature" aria-label={`Copy ${method.name} signature`} onClick={() => copy(method.signature, method.name)}><Icon name={copied === method.name ? 'check' : 'copy'} size={15} /></button>
     </div>
     <p className="method-summary">{method.summary}</p>
-    <div className="signature"><code>{signature}</code></div>
 
     <h4>Parameters</h4>
     <div className="params">
@@ -242,10 +240,10 @@ function Method({ method, module, pagePath, copied, copy }) {
       <Code code={withExport(method.basicExample)} id={`basic-example-${method.name}`} copied={copied} copy={copy} />
       <h4>Full Parameter Example</h4>
       <Code code={withExport(method.fullParameterExample)} id={`full-example-${method.name}`} copied={copied} copy={copy} />
-    </> : <>
+    </> : method.example ? <>
       <h4>Example</h4>
       <Code code={withExport(method.example)} id={`example-${method.name}`} copied={copied} copy={copy} />
-    </>}
+    </> : null}
 
     <div className="use-case"><Icon name="info" size={17} /><p><strong>When to use it.</strong> {method.useCase}</p></div>
   </section>

@@ -120,23 +120,23 @@ kbd { padding: 2px 7px; border: 1px solid var(--line-strong); border-bottom-widt
 .method h4 { margin: 36px 0 12px; color: var(--text); font-size: 17px; font-weight: 600; }
 
 .params { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
-.param { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 20px; padding: 16px 18px; }
+.param { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 18px 20px; }
 .param + .param { border-top: 1px solid var(--line); }
-.param-key { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
-.param-name { color: var(--text); font-size: 15px; font-weight: 600; }
-.param-type { color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
+.param-key { display: flex; min-width: 0; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 7px 10px; }
+.param-name { max-width: 100%; color: var(--text); font-size: 16px; font-weight: 650; overflow-wrap: anywhere; }
+.param-type { max-width: 100%; padding: 2px 7px; border: 1px solid var(--line); border-radius: 6px; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
 .optional-tag { padding: 0 8px; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--muted); font-size: 12px; line-height: 1.6; }
-.param p { color: var(--body); font-size: 15px; line-height: 1.7; }
+.param p { min-width: 0; color: var(--body); font-size: 16px; line-height: 1.75; overflow-wrap: anywhere; }
 .param-group { border-top: 1px solid var(--line); }
-.param-group > summary { position: relative; display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 8px 20px; padding: 16px 18px 14px 38px; cursor: pointer; list-style: none; }
+.param-group > summary { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 18px 20px 16px 42px; cursor: pointer; list-style: none; }
 .param-group > summary::-webkit-details-marker { display: none; }
 .param-group > summary::before { position: absolute; top: 19px; left: 18px; color: var(--muted); content: '›'; font-size: 20px; line-height: 1; transition: transform .15s ease; }
 .param-group[open] > summary::before { transform: rotate(90deg); }
-.param-group > summary .param-key { grid-column: 1; }
-.param-group > summary p { grid-column: 2; color: var(--body); font-size: 15px; line-height: 1.7; }
-.param-expand-hint { grid-column: 2; color: var(--muted); font-size: 12px; }
+.param-group > summary .param-key, .param-group > summary p, .param-expand-hint { grid-column: 1; }
+.param-group > summary p { min-width: 0; color: var(--body); font-size: 16px; line-height: 1.75; overflow-wrap: anywhere; }
+.param-expand-hint { color: var(--muted); font-size: 13px; }
 .param-children { margin-left: 18px; border-left: 1px solid var(--line-strong); }
-.param-children .param { grid-template-columns: 190px minmax(0, 1fr); padding-left: 20px; }
+.param-children .param { grid-template-columns: minmax(0, 1fr); padding-left: 24px; }
 .param-children .param:first-child { border-top: 1px solid var(--line); }
 
 .answers { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
@@ -219,11 +219,11 @@ kbd { padding: 2px 7px; border: 1px solid var(--line-strong); border-bottom-widt
   .page-header h1 { font-size: 34px; }
   .lede { font-size: 17px; }
   .access-row { flex-direction: column; align-items: flex-start; gap: 4px; }
-  .param { grid-template-columns: 1fr; gap: 8px; }
-  .param-key { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
-  .param-group > summary { grid-template-columns: 1fr; gap: 8px; padding-right: 12px; }
+  .param { grid-template-columns: 1fr; gap: 8px; padding: 16px; }
+  .param-key { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 7px 9px; }
+  .param-group > summary { grid-template-columns: 1fr; gap: 8px; padding: 16px 12px 14px 36px; }
   .param-group > summary p, .param-expand-hint { grid-column: 1; }
-  .param-children .param { grid-template-columns: 1fr; }
+  .param-children .param { grid-template-columns: 1fr; padding-left: 18px; }
   .answer { grid-template-columns: 1fr; gap: 6px; }
   .method-head h3 { font-size: 21px; }
   .returns-badge { display: none; }

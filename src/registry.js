@@ -1,6 +1,10 @@
 import { distancePages } from './data.js'
 import { progressbarPages } from './progressbar.js'
 import { notifyPages } from './notify.js'
+import { cachePages } from './cache.js'
+import { printsPages } from './prints.js'
+import { localesPages } from './locales.js'
+import { appshellPages } from './appshell.js'
 
 /*
   The whole site is described here. To add documentation:
@@ -19,6 +23,22 @@ export const resources = [
     id: 'kora_lib',
     title: 'kora_lib',
     modules: [
+      {
+        id: 'appshell',
+        title: 'AppShell',
+        namespace: 'Kora.nui',
+        exportResource: 'kora_lib',
+        exportPrefix: 'nui_',
+        pages: [{ id: 'client', title: 'Client', facts: [], content: appshellPages.client }],
+      },
+      {
+        id: 'cache',
+        title: 'Cache',
+        namespace: 'Kora.cache',
+        exportResource: 'kora_lib',
+        exportPrefix: 'cache_',
+        pages: [{ id: 'client', title: 'Client', facts: [], content: cachePages.client }],
+      },
       {
         id: 'distance',
         title: 'Distance',
@@ -42,19 +62,12 @@ export const resources = [
         ],
       },
       {
-        id: 'progressbar',
-        title: 'Progressbar',
-        namespace: 'Kora.progressbar',
+        id: 'locales',
+        title: 'Locales',
+        namespace: 'Kora',
         exportResource: 'kora_lib',
-        exportPrefix: 'progressbar_',
-        pages: [
-          {
-            id: 'client',
-            title: 'Client',
-            facts: [],
-            content: progressbarPages.client,
-          },
-        ],
+        exportPrefix: '',
+        pages: [{ id: 'shared', title: 'Shared', facts: [], content: localesPages.shared }],
       },
       {
         id: 'notify',
@@ -67,6 +80,22 @@ export const resources = [
           { id: 'shared', title: 'Shared', facts: [], content: notifyPages.shared },
           { id: 'server', title: 'Server', facts: [], content: notifyPages.server },
         ],
+      },
+      {
+        id: 'prints',
+        title: 'Prints',
+        namespace: 'Kora.print',
+        exportResource: 'kora_lib',
+        exportPrefix: 'print_',
+        pages: [{ id: 'shared', title: 'Shared', facts: [], content: printsPages.shared }],
+      },
+      {
+        id: 'progressbar',
+        title: 'Progressbar',
+        namespace: 'Kora.progressbar',
+        exportResource: 'kora_lib',
+        exportPrefix: 'progressbar_',
+        pages: [{ id: 'client', title: 'Client', facts: [], content: progressbarPages.client }],
       },
     ],
   },
