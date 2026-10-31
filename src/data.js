@@ -6,7 +6,7 @@ const answers = (yes, no) => [
 
 const coords = c('coords', 'vector3() or vector4()', 'The position to check, written as vector3(x, y, z) or vector4(x, y, z, heading). The heading in vector4 is ignored.')
 const radius = c('distance', 'number', 'How close is close enough, in game units. Defaults to 5.0. Use zero or a positive number.', false)
-
+ 
 export const distancePages = {
   client: {
     realm: 'Client',
