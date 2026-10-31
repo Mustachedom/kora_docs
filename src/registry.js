@@ -5,6 +5,7 @@ import { cachePages } from './cache.js'
 import { printsPages } from './prints.js'
 import { localesPages } from './locales.js'
 import { appshellPages } from './appshell.js'
+import { referenceModules } from './moduleDocs.js'
 
 /*
   The whole site is described here. To add documentation:
@@ -97,7 +98,8 @@ export const resources = [
         exportPrefix: 'progressbar_',
         pages: [{ id: 'client', title: 'Client', facts: [], content: progressbarPages.client }],
       },
-    ],
+      ...referenceModules,
+    ].sort((a, b) => a.title.localeCompare(b.title)),
   },
 ]
 
@@ -117,17 +119,17 @@ const searchIndex = flatPages.flatMap(({ resource, module, page, path }) => [
     subtitle: page.content.summary,
     tag: resource.title,
     path,
-    hay: `${resource.title} ${module.title} ${page.title} ${page.content.title} ${page.content.summary}`.toLowerCase(),
+    hay: `${resource.title} ${module.title} ${page.title} ${page.content.title} ${page.content.summary} ${page.content.markdown || ''}`.toLowerCase(),
   },
   ...page.content.methods.map((method) => ({
     kind: 'method',
-    title: `${module.namespace}.${method.name}`,
+    title: method.searchTitle || `${module.namespace}.${method.name}`,
     subtitle: method.summary,
     tag: page.title,
     path: `${path}/${method.name}`,
     hay: [
-      module.title, page.title, method.name, method.signature, method.summary, method.useCase,
-      ...method.parameters.map((param) => `${param.name} ${param.type} ${param.description}`),
+      module.title, page.title, method.searchTitle, method.name, method.signature, method.summary, method.useCase,
+      ...(method.parameters || []).map((param) => `${param.name} ${param.type} ${param.description}`),
     ].join(' ').toLowerCase(),
   })),
 ])

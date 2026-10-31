@@ -1,0 +1,175 @@
+{
+  "prints": [
+    "shared"
+  ],
+  "camera": [
+    "client"
+  ],
+  "drawing": [
+    "client"
+  ],
+  "editor": [
+    "server"
+  ],
+  "skills": [
+    "client",
+    "server"
+  ],
+  "blips": [
+    "client",
+    "shared",
+    "server"
+  ],
+  "teleport": [
+    "client"
+  ],
+  "world": [
+    "client",
+    "server"
+  ],
+  "instructional": [
+    "client"
+  ],
+  "theme": [
+    "client",
+    "shared"
+  ],
+  "config": [
+    "client",
+    "server"
+  ],
+  "commands": [
+    "server"
+  ],
+  "distancecheck": [
+    "client",
+    "server"
+  ],
+  "actions": [
+    "client"
+  ],
+  "raycast": [
+    "client"
+  ],
+  "screenshot": [
+    "client",
+    "server"
+  ],
+  "nui": [
+    "client"
+  ],
+  "locales": [
+    "client",
+    "shared"
+  ],
+  "random": [
+    "shared"
+  ],
+  "loops": [
+    "shared"
+  ],
+  "zones": [
+    "client"
+  ],
+  "status": [
+    "client",
+    "shared",
+    "server"
+  ],
+  "timers": [
+    "shared"
+  ],
+  "sound": [
+    "client"
+  ],
+  "interact": [
+    "client"
+  ],
+  "rewards": [
+    "shared"
+  ],
+  "require": [],
+  "freecam": [
+    "client"
+  ],
+  "cache": [
+    "client"
+  ],
+  "controls": [
+    "client"
+  ],
+  "visuals": [
+    "client"
+  ],
+  "minigames": [
+    "client",
+    "shared",
+    "server"
+  ],
+  "lookup": [
+    "client",
+    "shared",
+    "server"
+  ],
+  "anim": [
+    "client"
+  ],
+  "placement": [
+    "client"
+  ],
+  "state": [
+    "client",
+    "shared",
+    "server"
+  ],
+  "keybind": [
+    "client"
+  ],
+  "textui": [
+    "client"
+  ],
+  "stream": [
+    "client"
+  ],
+  "permissions": [
+    "server"
+  ],
+  "vehicle": [
+    "client",
+    "shared"
+  ],
+  "ox": [
+    "client",
+    "shared",
+    "server"
+  ],
+  "notify": [
+    "client",
+    "shared",
+    "server"
+  ],
+  "logging": [
+    "server"
+  ],
+  "progressbar": [
+    "client"
+  ],
+  "util": [
+    "client",
+    "shared"
+  ],
+  "closest": [
+    "client",
+    "server"
+  ],
+  "discord": [
+    "server"
+  ],
+  "fx": [
+    "client"
+  ],
+  "entities": [
+    "client",
+    "server"
+  ]
+}

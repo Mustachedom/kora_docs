@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { flatPages, resolveRoute, resources, search } from './registry.js'
 import { highlightLua } from './highlight.js'
+import MarkdownDocument from './MarkdownDocument.jsx'
 import './styles.css'
 
 const glyphs = {
@@ -347,7 +348,9 @@ function App() {
             <h1>{content.title}</h1>
           </header>
 
-          {content.methods.map((method) => <Method key={method.name} method={method} module={module} pagePath={path} copied={copied} copy={copy} />)}
+          {content.markdown
+            ? <MarkdownDocument markdown={content.markdown} />
+            : content.methods.map((method) => <Method key={method.name} method={method} module={module} pagePath={path} copied={copied} copy={copy} />)}
 
           <PageNav index={pageIndex} />
         </article>

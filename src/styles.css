@@ -119,6 +119,30 @@ kbd { padding: 2px 7px; border: 1px solid var(--line-strong); border-bottom-widt
 
 .method h4 { margin: 36px 0 12px; color: var(--text); font-size: 17px; font-weight: 600; }
 
+/* ---------- source module references ---------- */
+.reference-body { color: var(--body); font-size: 16px; line-height: 1.8; }
+.reference-body > * { max-width: 100%; }
+.reference-body p { margin: 16px 0; overflow-wrap: anywhere; }
+.reference-body h2 { margin: 46px 0 18px; padding-bottom: 10px; border-bottom: 1px solid var(--line); color: var(--text); font-size: 25px; line-height: 1.35; scroll-margin-top: 96px; }
+.reference-body h3 { margin: 34px 0 14px; color: var(--text); font-size: 20px; line-height: 1.4; scroll-margin-top: 96px; }
+.reference-body h4 { margin: 25px 0 12px; color: var(--text); font-size: 17px; scroll-margin-top: 96px; }
+.reference-body ul, .reference-body ol { margin: 16px 0; padding-left: 26px; }
+.reference-body li { margin: 8px 0; padding-left: 4px; }
+.reference-body li::marker { color: var(--accent); }
+.reference-body a { color: var(--accent); text-underline-offset: 3px; }
+.reference-body :not(pre) > code { padding: 2px 6px; border: 1px solid var(--line); border-radius: 5px; background: var(--surface); color: var(--text); font-size: .9em; overflow-wrap: anywhere; }
+.reference-body strong { color: var(--text); font-weight: 650; }
+.reference-body blockquote { margin: 20px 0; padding: 4px 18px; border-left: 3px solid var(--accent); color: var(--muted); }
+.reference-body hr { margin: 32px 0; border: 0; border-top: 1px solid var(--line); }
+.reference-code { margin: 18px 0 26px; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.reference-code-label { padding: 9px 14px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.reference-code pre { margin: 0; padding: 18px; overflow-x: auto; color: var(--text); font: 14px/1.75 var(--mono); tab-size: 4; }
+.reference-table-wrap { margin: 20px 0 26px; overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+.reference-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.65; }
+.reference-table th, .reference-table td { min-width: 120px; padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.reference-table th { background: var(--surface); color: var(--text); font-weight: 600; }
+.reference-table tr:last-child td { border-bottom: 0; }
+
 .params { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
 .param { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 18px 20px; }
 .param + .param { border-top: 1px solid var(--line); }
